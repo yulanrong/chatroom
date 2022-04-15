@@ -6,7 +6,6 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static("client/dist"));
 
-app.get("/checkname", model.checkName);
 app.post("/register", model.register);
 app.post("/login", model.login);
 app.get("/messages", model.getMessages);

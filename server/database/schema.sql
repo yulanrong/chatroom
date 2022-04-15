@@ -4,8 +4,8 @@
 CREATE DATABASE chatroomdb;
 \connect chatroomdb;
 
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS messages CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
