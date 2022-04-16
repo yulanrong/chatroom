@@ -52,7 +52,7 @@ const Messages = ({id}) => {
 
 
 
-        <textarea rows="3" cols="70" className="sendInput" type="text" placeholder="Enter message..." value={text} onChange={(e) => {
+        <textarea rows="3" className="sendInput" type="text" placeholder="Enter message..." value={text} onChange={(e) => {
           e.preventDefault();
           setText(e.target.value);
         }}></textarea>

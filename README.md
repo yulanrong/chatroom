@@ -16,3 +16,15 @@ This is a chat application. Users can signup and login to the chat room and chat
 4. `npm start` to start the server, if having error on starting server, please check `server/database/index.js`, change user and/or add password.
 5. `npm run build` to compile frontend
 6. open browser, enter `localhost:3000`
+
+## Tech Stacks
+
+- React
+- Node.js
+- PostgreSQL
+- Axios
+- Express
+- Bcrypt
+- HTML/CSS
+- Moment
+- Webpack/Babel
