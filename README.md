@@ -6,6 +6,8 @@ This is a chat application. Users can signup and login to the chat room and chat
 
 ## Demo
 
+![demo](./client/dist/demo.gif)
+
 ## Usage
 
 1. fork the repo to your local machine
