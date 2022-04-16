@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import {BiUserCircle} from "react-icons/bi";
 
 const Messages = ({id}) => {
   const [messages, setMessages] = useState([]);
@@ -18,7 +19,14 @@ const Messages = ({id}) => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    axios.post(`/messages/${id}`, {message: text}).then(() => {fetchData()}).catch(err => console.log(err));
+    if (text.length > 0) {
+
+      axios.post(`/messages/${id}`, {message: text}).then(() => {
+        fetchData();
+
+      }).catch(err => console.log(err));
+    }
+
     setText('');
 
   };
@@ -31,7 +39,8 @@ const Messages = ({id}) => {
 
         return (
           <div key={idx}>
-            <p>{moment(item.created_at).format('MMMM Do YYYY, h:mm:ss a')}</p>
+            <p>{moment(item.created_at).calendar()}</p>
+            <BiUserCircle />
             <p>{item.user_id === id ? 'You' : item.name}</p>
             <p>{item.message}</p>
           </div>
@@ -39,7 +48,7 @@ const Messages = ({id}) => {
       })}
 
       <div>
-        <input type="text" placeholder="Enter message..." onChange={(e) => {
+        <input type="text" placeholder="Enter message..." value={text} onChange={(e) => {
           e.preventDefault();
           setText(e.target.value);
         }} />

@@ -1,5 +1,5 @@
 -- in terminal, run psql postgres
--- \i schema.sql
+-- \i server/database/schema.sql
 
 CREATE DATABASE chatroomdb;
 \connect chatroomdb;
