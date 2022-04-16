@@ -1,0 +1,159 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  padding: 2em;
+}
+
+h1 {
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  color: saddlebrown;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+
+.login {
+  border: 2px solid saddlebrown;
+  border-radius: 20px;
+  padding: 1em;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.signup {
+  background-color: white;
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  border-radius: 20px;
+  padding: 1em;
+  align-self: center;
+  background-color: cornsilk;
+  text-align: center;
+  border: 2px solid saddlebrown;
+  width: 40%;
+  height: auto;
+}
+
+button {
+  margin: 1em;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: saddlebrown;
+  color: white;
+}
+
+p {
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+.closeButton {
+  float: right;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.warning {
+  color: red;
+}
+
+input {
+  width: 70%;
+  height: 30px;
+}
+
+.signupButton {
+  border: none;
+  color: saddlebrown;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.container {
+  border-style: solid;
+  border-radius: 10px;
+  border-color: saddlebrown;
+  width: 80%;
+  padding: 1em;
+  margin: 1em;
+}
+.messagesContainer {
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+  overflow-y: auto;
+}
+.message {
+  align-items: center;
+}
+
+.date {
+  text-align: center;
+  color: gray;
+  font-size: 12px;
+}
+
+.username {
+  font-size: 22px;
+  font-weight: bold;
+  color: saddlebrown;
+  display:inline-block;
+}
+
+.content {
+  margin-left: 18px;
+  display:inline-block;
+  font-size: 20px;
+}
+
+.sendInput {
+  margin-top: 30px;
+  height: 100px;
+  border-radius: 5px;
+
+}
+
+.sendButton {
+  height: 50px;
+  width: auto;
+  padding: 1em;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+
+}

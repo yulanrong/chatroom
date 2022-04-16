@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import {BiUserCircle} from "react-icons/bi";
 
 const Messages = ({id}) => {
   const [messages, setMessages] = useState([]);
@@ -33,27 +32,32 @@ const Messages = ({id}) => {
 
 
   return (
-    <div>
+    <div className="container">
+      <div className="messagesContainer">
 
       {messages.map((item, idx) => {
 
         return (
-          <div key={idx}>
-            <p>{moment(item.created_at).calendar()}</p>
-            <BiUserCircle />
-            <p>{item.user_id === id ? 'You' : item.name}</p>
-            <p>{item.message}</p>
+          <div key={idx} className="message">
+            <p className="date">{moment(item.created_at).calendar()}</p>
+
+            <p className="username">{item.user_id === id ? 'You:' : `${item.name}:`}</p>
+            <p className="content">{item.message}</p>
+
+
           </div>
         )
       })}
+      </div>
 
-      <div>
-        <input type="text" placeholder="Enter message..." value={text} onChange={(e) => {
+
+
+        <textarea rows="3" cols="70" className="sendInput" type="text" placeholder="Enter message..." value={text} onChange={(e) => {
           e.preventDefault();
           setText(e.target.value);
-        }} />
-        <button onClick={sendMessage}>sent</button>
-      </div>
+        }}></textarea>
+        <button onClick={sendMessage} className="sendButton">Send</button>
+
     </div>
   )
 

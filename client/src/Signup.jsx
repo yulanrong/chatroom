@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Signup = () => {
+const Signup = ({closeSignup}) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -11,10 +11,10 @@ const Signup = () => {
     e.preventDefault();
     if (confirmPassword !== password) {
       setRegistered(
-        "passwords are not matching. Please confirm your password."
+        "Passwords are not matching. Please confirm your password."
       );
     } else if (password.length === 0) {
-      setRegistered("password cannot be empty.");
+      setRegistered("Password cannot be empty.");
     } else {
       axios
         .post("/register", { name: name, password: password })
@@ -26,8 +26,10 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h1>Sign up</h1>
+    <div className="signup">
+      <div className="modal">
+      <label onClick={closeSignup} className="closeButton">X</label>
+      <h2>Sign up</h2>
       <form onSubmit={handleSignup}>
         <label>
           <p> Please set your username</p>
@@ -64,11 +66,12 @@ const Signup = () => {
       </form>
       {registered === "Registered!" ? (
         <p>
-          Thank you! You've been registered. <button> Go back to Login</button>
+          Thank you! You've been registered. <button onClick={closeSignup}> Go back to Login</button>
         </p>
       ) : (
         <p className="warning">{registered}</p>
       )}
+      </div>
     </div>
   );
 };

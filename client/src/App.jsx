@@ -17,11 +17,15 @@ const App = () => {
 
   if (status !== 'Login Successful!') {
     return (
-      <Login handleLogin={handleLogin} status={status} />
+      <div>
+        <h1>Chat App</h1>
+        <Login handleLogin={handleLogin} status={status} />
+      </div>
     )
   } else {
     return (
       <div>
+        <h1>Messages</h1>
         <Messages id={userId} />
       </div>
     )
